@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+
+    <script src="https://unpkg.com/scrollama"></script>
+
+    <style>
+		html,body{
+			width: 100%;
+			height: 100%;
+			font-family: sans-serif;
+			color: #555;
+			background-color: #fff;
+			font-size: 1.4em;
+		}
+		section{
+			max-width: 1000px;
+			margin: 20% auto;
+		}
+		section:not(:first-of-type){
+			max-width: 1000px;
+			margin: 50% auto;
+		}
+		section div{
+			display: inline-block;
+			padding: 50px;
+			margin-bottom: 100%;
+		}
+		section div.steps{
+			max-width: 500px;
+		}
+
+        section div.graphic{
+			float: right;
+			position: -webkit-sticky;
+			position: sticky;
+			top: 0;
+		}
+
+    </style>
+</head>
+
+<body>
+    <section>
+        <div>
+            <h1>Scrollama and SVG</h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="graphic">
+            <svg width="183" height="158" viewBox="0 0 183 158" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                id="star"
+                d="M91.5 4.46512L111.528 60.6194L111.884 61.6155H112.941L177.342 61.6155L125.365 96.0181L124.385 96.6665L124.78 97.7729L144.709 153.65L92.3279 118.98L91.5 118.432L90.6721 118.98L38.291 153.65L58.2204 97.7729L58.615 96.6665L57.6355 96.0181L5.65812 61.6155L70.0589 61.6155H71.1165L71.4717 60.6194L91.5 4.46512Z" 
+                fill="#80B937" 
+                stroke="#4E4088" 
+                stroke-width="3"/>
+                </svg>
+        </div>
+		<div class="steps">
+			<div class="step">Smiling from a star that she makes glow watching as you grow</div>
+            <div class="step">Find her in the place where the lost things go</div>
+		</div>
+    </section>
+
+    <script type="text/javascript">
+        const scroller = scrollama();
+
+        scroller
+            .setup({
+                step: '.step'
+            })
+            .onStepEnter((response) => {
+                response.element.classList.add('active');
+            })
+            .onStepExit((response) => {
+                response.element.classList.remove('active');
+            })
+    </script>
+</body>
+
+</html>
